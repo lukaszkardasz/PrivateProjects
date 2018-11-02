@@ -40,7 +40,7 @@ class HumanCompare {
 
     @Override
     public int hashCode() {
-        return 17 * pesel.hashCode();
+        return 17 * pesel.hashCode() * wiek;
     }
 
     @Override
