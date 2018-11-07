@@ -1,4 +1,4 @@
-package Zastapienie;
+package nauka.exercise;
 
 import java.awt.Color;
 import java.awt.Graphics;

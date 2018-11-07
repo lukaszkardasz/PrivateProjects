@@ -1,4 +1,4 @@
-package tutoriale.podstawy;
+package nauka.exercise;
 
 public class stale {
 	
@@ -9,7 +9,7 @@ public class stale {
 		
 
 		
-		System.out.println(Math.PI); //pokazanie sta³ej PI
+		System.out.println(Math.PI); //pokazanie staï¿½ej PI
 		System.out.println(stale.WIDTH);
 		System.out.println(stale.HEIGHT);
 		

@@ -1,6 +1,4 @@
-package tutoriale.podstawy;
-
-import java.awt.Window;
+package nauka.exercise;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;

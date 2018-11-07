@@ -81,7 +81,10 @@ public class ListExamples
         Collections.reverse(integerLinkowanaLista);
         System.out.println("Kolejność odwrócona------------");
         System.out.println(integerLinkowanaLista);
-
+        System.out.println("Wyświetlanie listy: ");
+        for (Integer element : integerLinkowanaLista) {
+            System.out.println(element);
+        }
 
 
     }

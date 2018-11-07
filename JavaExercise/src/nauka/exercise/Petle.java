@@ -1,4 +1,4 @@
-package tutoriale.podstawy;
+package nauka.exercise;
 
 public class Petle {
 

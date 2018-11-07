@@ -1,4 +1,4 @@
-package Zastapienie;
+package nauka.exercise;
 
 public class Baza {
 	public void siema() {

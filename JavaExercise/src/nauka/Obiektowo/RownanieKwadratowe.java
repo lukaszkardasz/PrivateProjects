@@ -1,13 +1,13 @@
 package nauka.Obiektowo;
 
-public class RównanieKwadratowe {
+public class RownanieKwadratowe {
 
     private int a;
     private int b;
     private int c;
 
 
-    public RównanieKwadratowe(int a, int b, int c){
+    public RownanieKwadratowe(int a, int b, int c){
         this.a = a;
         this.b = b;
         this.c = c;
@@ -65,8 +65,8 @@ public class RównanieKwadratowe {
     }
 
     public static void main(String[] args) {
-        RównanieKwadratowe równanie = new RównanieKwadratowe(1,4,1);
-        System.out.println(równanie.rozwiaz());
+        RownanieKwadratowe rownanie = new RownanieKwadratowe(1,4,1);
+        System.out.println(rownanie.rozwiaz());
     }
 
 }

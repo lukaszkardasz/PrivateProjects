@@ -1,6 +1,4 @@
-package tutoriale.podstawy;
-
-import javax.swing.text.StyledEditorKit.ForegroundAction;
+package nauka.exercise;
 
 public class Tablice {
 	
