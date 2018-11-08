@@ -30,7 +30,7 @@ public class MapExercise {
         System.out.println("Zakonczono podawanie danych.");
         System.out.println("Podaj imie nr. 1, a podam Ci jego pare: ");
             imie1 = skaner.next();
-            System.out.println("Imie nr .2 dla imienia 1: " + imie1 + " to: " + mapa.get(imie1));
+            System.out.println("Imie nr. 2 dla imienia 1: " + imie1 + " to: " + mapa.get(imie1));
 
 
 
