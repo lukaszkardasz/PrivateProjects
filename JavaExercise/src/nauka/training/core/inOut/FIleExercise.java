@@ -11,15 +11,15 @@ class FIleExercise {
         // write to file
         String filePathWrite = "D:\\java\\JavaExercise\\src\\nauka\\training\\core\\inOut\\File.txt";
         int number = 12345678;
-        FileWriter fileWriter = null;
+        FileWriter fileWriter1 = null;
 
 
         try{
-            fileWriter = new FileWriter(filePathWrite);
-            fileWriter.write(Integer.toString(number));
+            fileWriter1 = new FileWriter(filePathWrite);
+            fileWriter1.write(Integer.toString(number));
         } finally{
-            if(fileWriter != null){
-                fileWriter.close();
+            if(fileWriter1 != null){
+                fileWriter1.close();
             }
         }
 
@@ -69,6 +69,51 @@ class FIleExercise {
         } finally {
             if (inputStream != null) {
                 inputStream.close();
+            }
+        }
+
+        String fileName = "plik.txt";
+        FileWriter fileWriter = null;
+
+        try {
+            fileWriter = new FileWriter(fileName);
+            fileWriter.write("Tekst 1\n");
+            fileWriter.write("Tekst 2\n");
+            fileWriter.write("Tekst 3\n");
+            fileWriter.write("Tekst 4\n");
+        }
+        catch (IOException ex) {
+            System.out.println("Problem z dostepem do pliku");
+        }
+        finally {
+            if (fileWriter == null) {
+                System.out.println("Problem");
+            } else {
+                fileWriter.close();
+            }
+        }
+
+        BufferedReader bf = null;
+
+        try{
+            bf = new BufferedReader(new FileReader(fileName));
+            String linia = null;
+            do {
+                linia = bf.readLine();
+                if (linia!= null) {
+                    System.out.println(linia);
+                }
+            }   while (linia != null);
+
+
+        } catch (IOException ex){
+            System.out.println("Problem z dostepem do pliku!");
+        } finally {
+            if (bf != null){
+                System.out.println("Zakończono czytanie pliku!");
+                bf.close();
+            } else {
+                bf.close();
             }
         }
     }
