@@ -1,9 +1,6 @@
 package nauka.training.core.inOut;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 class FIleExercise {
 
@@ -43,10 +40,36 @@ class FIleExercise {
             }
         }
 
+        //obsługa plików binarnych - zapisywanie bajt po bajcie
 
+        String filePathBinaryWrite = "D:\\java\\JavaExercise\\src\\nauka\\training\\core\\inOut\\FileBinary.txt";
+        int number3 = 1234567;
+        DataOutputStream outputStream = null;
 
+        try{
+            outputStream = new DataOutputStream(new FileOutputStream(filePathBinaryWrite));
+            outputStream.writeInt(number3);
+        } finally{
+            if (outputStream != null){
+                outputStream.close();
+            }
+        }
 
+        // czytanie plików binarnych
 
+        String filePathBinaryRead = "D:\\java\\JavaExercise\\src\\nauka\\training\\core\\inOut\\FileBinary.txt";
+        int number4 = 0;
+        DataInputStream inputStream = null;
 
+        try {
+            inputStream = new DataInputStream(new FileInputStream(filePathBinaryRead));
+            number4 = inputStream.readInt();
+            System.out.println(number4);
+            System.out.println();
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
+        }
     }
 }
