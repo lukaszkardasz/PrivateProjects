@@ -11,23 +11,27 @@ class FileExerciseEx1 {
         System.out.println("Podaj ścieżkę i nazwę pliku: ");
         FileWriter fileWriter = null;
         path = skaner.nextLine();
-        if (path != null){
+        if (path != null) {
             String linia = null;
             fileWriter = new FileWriter(path);
-            do {
-                try{
+            try {
+                do {
+
                     System.out.println("Podaj dane do zapisania w linii - \"-\" aby zakończyć!");
                     linia = skaner.nextLine();
+                    if (linia.equals("-")) {
+                        break;
+                    }
                     fileWriter.write(linia);
                     fileWriter.write(System.lineSeparator());
-                } catch (IOException ex){
-                    System.out.println("Błąd! Problem z dostepem do pliku!");
-                    fileWriter.close();
-                } finally {
-                    fileWriter.close();
-                    skaner.close();
                 }
-            } while (linia != "-");
+                while (true);
+            } finally {
+                if (fileWriter != null) {
+                    fileWriter.close();
+                }
+                skaner.close();
+            }
         }
 
 
