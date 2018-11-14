@@ -28,7 +28,6 @@ class FIleExercise {
         String filePathRead = "D:\\java\\JavaExercise\\src\\nauka\\training\\core\\inOut\\File2.txt";
         int number2 = 0;
         BufferedReader fileReader = null;
-
         try{
             fileReader = new BufferedReader( (new FileReader(filePathRead)));
             String numberAsString = fileReader.readLine();

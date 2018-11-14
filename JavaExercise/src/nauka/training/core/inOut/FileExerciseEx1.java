@@ -16,7 +16,6 @@ class FileExerciseEx1 {
             fileWriter = new FileWriter(path);
             try {
                 do {
-
                     System.out.println("Podaj dane do zapisania w linii - \"-\" aby zakończyć!");
                     linia = skaner.nextLine();
                     if (linia.equals("-")) {
@@ -24,8 +23,7 @@ class FileExerciseEx1 {
                     }
                     fileWriter.write(linia);
                     fileWriter.write(System.lineSeparator());
-                }
-                while (true);
+                } while (true);
             } finally {
                 if (fileWriter != null) {
                     fileWriter.close();
@@ -33,8 +31,5 @@ class FileExerciseEx1 {
                 skaner.close();
             }
         }
-
-
     }
-
 }
