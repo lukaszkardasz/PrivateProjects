@@ -1,5 +1,6 @@
 package nauka.training.core.inOut;
 
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -30,6 +31,8 @@ class FileExerciseEx1 {
                 }
                 skaner.close();
             }
+        } else {
+            throw new FileNotFoundException("Nie znaleziono takiego pliku ani katalogu!!!");
         }
     }
 }
