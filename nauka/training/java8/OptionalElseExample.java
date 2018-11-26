@@ -1,3 +1,4 @@
+/*
 package nauka.training.java8;
 import org.testng.annotations.Test;
 
@@ -61,3 +62,4 @@ public class OptionalElseExample {
 
 
 }
+*/

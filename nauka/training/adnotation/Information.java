@@ -15,4 +15,5 @@ public @interface Information {
     String author() default "Programmer";
     String date();
     String description();
+    String comment();
 }

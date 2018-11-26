@@ -1,3 +1,4 @@
+/*
 package nauka.training.java8;
 
 import org.junit.Test;
@@ -36,3 +37,4 @@ public class OptionalMapFilter {
     }
 
 }
+*/
