@@ -4,13 +4,15 @@ package nauka.training.adnotation;
 @Information(
         author = "Awesome programmer",
         date = "2015-09-09",
-        description = "Base class")
+        description = "Base class",
+        comment = "komentarz")
 public class Soldier {
 
     @Information(
             author = "Awesome programmer",
             date = "2015-09-09",
-            description = "Actual grade")
+            description = "Actual grade",
+            comment = "komentarz")
     private String grade;
     private String division;
     private String name;
@@ -18,7 +20,8 @@ public class Soldier {
     @Information(
             author = "Good writer",
             date = "2017-12-29",
-            description = "Default constructor with initialization")
+            description = "Default constructor with initialization",
+            comment = "komentarz")
     public Soldier() {
         grade = "private";
         division = "NN";
@@ -48,7 +51,8 @@ public class Soldier {
     @Information(
             author = "Good writer",
             date = "2017-12-29",
-            description = "added as needed")
+            description = "added as needed",
+            comment = "komentarz")
     public void setDivision(String division) {
         this.division = division;
     }

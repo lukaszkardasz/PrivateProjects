@@ -1,3 +1,4 @@
+/*
 package nauka.training.jUnit;
 
 
@@ -40,3 +41,4 @@ public class testExamples
 
 
 }
+*/
