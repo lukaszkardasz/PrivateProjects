@@ -1,4 +1,4 @@
-package nauka.exercise;
+package nauka.exercise.Simple;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
