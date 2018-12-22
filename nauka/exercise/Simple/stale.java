@@ -1,4 +1,4 @@
-package nauka.exercise;
+package nauka.exercise.Simple;
 
 public class stale {
 	

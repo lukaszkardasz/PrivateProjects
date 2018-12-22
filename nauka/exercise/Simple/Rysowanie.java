@@ -1,4 +1,4 @@
-package nauka.exercise;
+package nauka.exercise.Simple;
 
 import java.awt.Color;
 import java.awt.Graphics;

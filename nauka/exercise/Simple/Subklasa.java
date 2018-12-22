@@ -1,4 +1,4 @@
-package nauka.exercise;
+package nauka.exercise.Simple;
 
 //Subklasa dziedziczy wszystkie zmienne i metody zdefiniowane w Bazie
 public class Subklasa extends Baza {
