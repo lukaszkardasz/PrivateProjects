@@ -1,24 +1,27 @@
+/*
 package nauka.training.java8;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class optionalTest {
 
     //robimy testy jUnitowe - sprawdzamy czy ta obiekt puszka - Optional jest pusty czy pełny czy cośtam jest
     //aby w ogóle robić testy jUnit trzeba mieć zaimportowąną bibliotekę jUnit czyli plik POM.xml poniżej:
- /*   <dependency>
+ */
+/*   <dependency>
            <groupId>junit</groupId>
            <artifactId>junit</artifactId>
            <version>4.12</version>
            <scope>compile</scope>
        </dependency>
        + oczywiście biblioteka jUnit
-*/
+*//*
+
     @Test
     public void emptyOptionalisOk(){
         Optional<String> empty = Optional.empty();
@@ -112,3 +115,4 @@ public class optionalTest {
 
 
 }
+*/

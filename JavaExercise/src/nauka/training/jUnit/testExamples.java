@@ -1,17 +1,21 @@
 package nauka.training.jUnit;
 
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class testExamples
 {
+    private Assertions Assert;
+
     @Test
     public void wordIsNotEmpty()
     {
@@ -32,7 +36,7 @@ public class testExamples
     {
         List<String> list = Arrays.asList("Jan", "Julek", "Franek", "John", "Bob", "Ala");
         assertTrue(list.size() > 2);
-        assertTrue("List without Ala", list.contains("Ala"));
+        assertTrue(list.contains("Ala"), "List without Ala");
     }
 
 

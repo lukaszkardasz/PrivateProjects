@@ -10,14 +10,53 @@ public class regexExample
 
     public static void main(String[] args) {
 
-        simpleRegexMatch();
+        String str = "Lukasz";
+        System.out.println(str.length());
+        System.out.println(str.charAt(3));
+        String str2 = "lukasz";
+        System.out.println(str.equals(str2));
+        System.out.println(str.equalsIgnoreCase(str2));
+        System.out.println(str.substring(2,4));
+        String str3 = "abrakadabra";
+        System.out.println(str3.replace("b","r"));
+        System.out.println(str.concat(str3));
+        String str4 = "Java;to;fajny;jezyk;programowania";
+        String tab1[] = null;
+        String tab2[] = null;
+        tab1 = str4.split(";");
+            for (String i :tab1) {
+                System.out.println(i);
+            }
+        System.out.println("_________");
+        tab2 = str4.split(";",2);
+        String str5 = tab2[1].replace(";", " ");
+        System.out.println(str5);
+        String str6 = "Lukasz ";
+        System.out.println(str6.trim());
+
+        firstToUpperCase(str2);
+
+
+
+
+
+/*        simpleRegexMatch();
         exaclyOneWord();
         testSentenceWithoutNumbers();
         passwordTest();
         replaceWordInSentence();
-        removeSpaces();
+        removeSpaces();*/
 
     }
+
+    private static String firstToUpperCase(String str2) {
+        String result = null;
+        String firstLetter = String.valueOf(str2.charAt(0)).toUpperCase();
+        String rest = str2.substring(1);
+        result = firstLetter.concat(rest);
+        return result;
+    }
+
 
     private static void removeSpaces() {
         input = "    Ala     ma  kota    .";
