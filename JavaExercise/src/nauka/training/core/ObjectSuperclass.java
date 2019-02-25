@@ -5,8 +5,14 @@ import java.util.Objects;
 class ObjectSuperclass {
 
     public static void main(String[] args) {
+    Punkt p = new Punkt (4,42);
+    Punkt p2 = new Punkt(4,44);
 
-
+    if (p.equals(p2)){
+        System.out.println("są sobie rowne!");
+    } else {
+        System.out.println("sorry, nie są równe");
+    }
     }
 
 }
@@ -51,5 +57,13 @@ class Punkt{
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
+    }
+
+    @Override
+    public String toString() {
+        return "Punkt{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }
