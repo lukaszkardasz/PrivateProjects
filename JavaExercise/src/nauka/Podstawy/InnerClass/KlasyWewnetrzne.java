@@ -1,4 +1,4 @@
-package nauka.Podstawy.KlasyZagniezdzone;
+package nauka.Podstawy.InnerClass;
 
 
 public class KlasyWewnetrzne {
