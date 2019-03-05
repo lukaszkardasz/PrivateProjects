@@ -1,10 +1,12 @@
 package nauka.Podstawy;
 
+
+
 public class Agregation {
 
     public static void main(String[] args) {
 
-        Human2 p = new Human2("Łukasz", new Adress("Krucza", 45));
+        Human2 p = new Human2("Lukasz", new Adress("Krucza", 45));
         System.out.println(p);
     }
 

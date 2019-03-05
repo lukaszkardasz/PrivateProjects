@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class Lotto {
 
+    /**
+     * @param args
+     * @apiNote
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] skresloneLiczby = new int[6];
