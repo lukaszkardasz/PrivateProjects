@@ -1,11 +1,62 @@
 package nauka.training.collections.MapExamples;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
-public class MapExample
-{
+import java.util.*;
+
+public class MapExample {
     public static void main(String[] args) {
+        TreeMap<Integer, Pracownik> mapa = new TreeMap();
+
+        Pracownik[] pracownicy = {
+                new Pracownik("Agnieszka"),
+                new Pracownik("Ziuta"),
+                new Pracownik("Franek"),
+                new Pracownik("Gienek"),
+                new Pracownik("Agnieszka"),
+                new Pracownik("Ziuta"),
+                new Pracownik("Franek"),
+                new Pracownik("Gienek"),
+                new Pracownik("Agnieszka"),
+                new Pracownik("Ziuta"),
+                new Pracownik("Franek"),
+                new Pracownik("Gienek"),
+                new Pracownik("Agnieszka"),
+                new Pracownik("Ziuta"),
+                new Pracownik("Franek"),
+                new Pracownik("Gienek"),
+        };
+
+        for (Pracownik pracownik : pracownicy) {
+            mapa.put(pracownik.getID(), pracownik);
+        }
+
+        //System.out.println(mapa);
+        mapa.remove(4);
+
+        mapa.put(4, new Pracownik("Mietek"));
+        mapa.put(3, new Pracownik("Glut"));
+        System.out.println(mapa);
+        mapa.entrySet();
+
+/*        mapa.forEach((key, value) -> {
+            System.out.println("ID: " + key);
+            System.out.println("Imię: " + value);
+        });*/
+
+        Map<Integer, Pracownik> subMapa = mapa.subMap(0, 3);
+        if (subMapa.isEmpty()) {
+            System.out.println("jest pusto");
+        } else {
+            subMapa.forEach((key, value) -> {
+                System.out.println("ID: " + key);
+                System.out.println("Imię: " + value);
+            });
+        }
+
+/*
+
+
         //tworzymy nową mapę
         Map<Integer, String> map0 = new HashMap<>();
         map0.put(102, "Rudy");
@@ -48,7 +99,39 @@ public class MapExample
             String key = entry.getKey();
             String value = entry.getValue();
             System.out.println(key + ": " + value);
-        }
+        }*/
 
     }
+}
+
+class Pracownik {
+    public Pracownik() {
+        i++;
+        ID = i;
+    }
+
+    public Pracownik(String imie) {
+        this();
+        this.imie = imie;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public String getImie() {
+        return imie;
+    }
+
+    @Override
+    public String toString() {
+        return "Pracownik{" +
+                "imie='" + imie + '\'' +
+                ", ID=" + ID +
+                '}';
+    }
+
+    String imie;
+    private int ID;
+    public static int i = 0;
 }
