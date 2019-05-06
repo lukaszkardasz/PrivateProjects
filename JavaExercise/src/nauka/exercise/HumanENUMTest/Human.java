@@ -2,21 +2,21 @@ package nauka.exercise.HumanENUMTest;
 
 public class Human {
 
-    private String imię;
+    private String imie;
     private int wiek;
     private EyeColour kolorOczu;
     private HairColour kolorWlosow;
 
 
-    public Human(String imię, int wiek, EyeColour kolorOczu, HairColour kolorWlosow) {
-        this.imię = imię;
+    public Human(String imie, int wiek, EyeColour kolorOczu, HairColour kolorWlosow) {
+        this.imie = imie;
         this.wiek = wiek;
         this.kolorOczu = kolorOczu;
         this.kolorWlosow = kolorWlosow;
     }
 
-    public String getImię() {
-        return imię;
+    public String getImie() {
+        return imie;
     }
 
     public int getWiek() {
