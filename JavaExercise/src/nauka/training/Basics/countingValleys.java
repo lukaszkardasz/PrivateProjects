@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Recurrency {
+public class countingValleys {
 
     static int valleys = 0; // number of valleys
     static int lvl = 0; //current lvl
