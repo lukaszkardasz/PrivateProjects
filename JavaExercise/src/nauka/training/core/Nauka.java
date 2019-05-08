@@ -53,8 +53,8 @@ class Pracownik extends Osoba{
 
 class Student extends Osoba{
 
-    public Student(String imię, String nazwisko) {
-        super(imię, nazwisko);
+    public Student(String imie, String nazwisko) {
+        super(imie, nazwisko);
     }
 
     @Override
