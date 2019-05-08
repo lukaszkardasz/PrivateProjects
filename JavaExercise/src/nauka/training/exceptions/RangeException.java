@@ -1,24 +1,19 @@
 package nauka.training.exceptions;
 
-public class RangeException extends Exception
-{
+public class RangeException extends Exception {
     private String msg = "";
 
-    public RangeException()
-    {
+    public RangeException() {
         msg = "Don't try get value outer memory";
     }
 
-    public RangeException(String message)
-    {
+    public RangeException(String message) {
         super(message);
     }
 
 
-
     @Override
-    public String toString()
-    {
+    public String toString() {
         return msg + super.toString();
     }
 }
