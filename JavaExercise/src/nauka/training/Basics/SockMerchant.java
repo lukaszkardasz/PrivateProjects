@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class sockMerchant {
+public class SockMerchant {
 
     // Complete the sockMerchant function below.
     static int sockMerchant(int socksNumber, int[] socksTable) {
