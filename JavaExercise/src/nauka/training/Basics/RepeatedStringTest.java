@@ -1,12 +1,15 @@
+/*
 package nauka.training.Basics;
 
 import static nauka.training.Basics.RepeatedString.repeatedString;
 import static org.junit.jupiter.api.Assertions.*;
 
+*/
 /**
  * @author n2god on 09/05/2019
  * @project PrivateProjects
- */
+ *//*
+
 class RepeatedStringTest {
 
 
@@ -22,4 +25,4 @@ class RepeatedStringTest {
         assertEquals(repeatedString(testString, 1000000000000L), 1000000000000L);
     }
 
-}
+}*/
