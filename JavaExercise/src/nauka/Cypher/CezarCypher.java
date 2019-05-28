@@ -30,7 +30,11 @@ import java.util.Scanner;
                 result += getShiftedChar(text.charAt(i), shift);
             }
             return result;
+
+
         }
+
+
 
         private static char getShiftedChar(char cipherChar, int shift) {
             int charValue = (int) cipherChar;
