@@ -3,14 +3,12 @@ package javastart_exercises.cabrio;
 public class Car {
     private String name;
     private String mark;
-    private boolean isMoving;
-    private boolean isRoofOpened;
+    private boolean moving;
+    private boolean roofOpened;
 
-    public Car(String name, String mark, boolean isMoving, boolean isRoofOpened) {
+    public Car(String name, String mark) {
         this.name = name;
         this.mark = mark;
-        this.isMoving = isMoving;
-        this.isRoofOpened = isRoofOpened;
     }
 
     public String getName() {
@@ -30,24 +28,29 @@ public class Car {
     }
 
     public boolean isMoving() {
-        return isMoving;
+        return moving;
     }
 
     public void setMoving(boolean moving) {
-        isMoving = moving;
+        if (moving) {
+            throw new IllegalStateException("Jedziesz! Nie mo¿na otworzyæ dachu!");
+        } else{
+            this.moving = moving;
+        }
     }
 
     public boolean isRoofOpened() {
-        return isRoofOpened;
+        return roofOpened;
     }
 
     public void setRoofOpened(boolean roofOpened) {
-        isRoofOpened = roofOpened;
+        this.roofOpened = roofOpened;
     }
 
-    public void move(){
-        if (isRoofOpened) {
-            System.out.println();
-        }
+    @Override
+    public String toString() {
+        return "Samochód marki: "+ name + " marki " + mark +
+                ", czy jedzie: " + moving +
+                ", czy ma otwarty dach: " + roofOpened;
     }
 }
