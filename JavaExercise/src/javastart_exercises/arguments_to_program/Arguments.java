@@ -1,4 +1,4 @@
-package javastart_exercises.ArgumentsToProgram;
+package javastart_exercises.arguments_to_program;
 
 import java.util.ArrayList;
 import java.util.Arrays;
