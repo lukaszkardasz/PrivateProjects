@@ -41,7 +41,7 @@ public class Arguments {
             stringList.add(Integer.toString(number));
             sum += number;
         }
-        String leftSideSum = String.join(" + ", stringList);
+        String leftSideSum = String.join(" + ", args);
         System.out.printf("%s = %d", leftSideSum, sum);
     }
 }
