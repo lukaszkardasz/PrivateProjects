@@ -35,13 +35,8 @@ public class Arguments {
     private static void printSum(String[] args) {
         System.out.print("Suma przekazanych liczb: ");
         List<Integer> ints = Arrays.stream(args).map(Integer::valueOf).collect(Collectors.toCollection(ArrayList::new));
-        List<String> stringList = new ArrayList<>(ints.size());
-        int sum = 0;
-        for (int number : ints) {
-            stringList.add(Integer.toString(number));
-            sum += number;
-        }
         String leftSideSum = String.join(" + ", args);
-        System.out.printf("%s = %d", leftSideSum, sum);
+        Integer suma = ints.stream().mapToInt(Integer::intValue).sum();
+        System.out.printf("%s = %d", leftSideSum, suma);
     }
 }
