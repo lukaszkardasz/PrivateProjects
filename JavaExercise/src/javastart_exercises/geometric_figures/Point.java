@@ -8,9 +8,9 @@ public class Point {
     private double a;
     private double b;
 
-    public Point(double a, double b) {
-        this.a = a;
-        this.b = b;
+    public Point(double x, double y) {
+        this.a = x;
+        this.b = y;
     }
 
     public double getA() {
@@ -31,6 +31,6 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Point[" + a +", " + b +"]";
+        return "Point[" + getA() +", " + getB() +"]";
     }
 }

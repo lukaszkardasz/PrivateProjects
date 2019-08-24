@@ -4,7 +4,7 @@ package javastart_exercises.geometric_figures;
  * @author n2god on 23/08/2019
  * @project PrivateProjects
  */
-public class Calculator {
+class ShapeCalculator {
 
     public static double lineLength(Point start, Point end) {
         double xPow = Math.pow(end.getA() - start.getA(), 2);
@@ -35,8 +35,8 @@ public class Calculator {
 
         double centerA = circle.getCenter().getA();
         double centerB = circle.getCenter().getB();
-        double result = Math.pow((centerA - a), 2) + Math.pow((centerB - b),2);
+        double result = Math.pow((centerA - a), 2) + Math.pow((centerB - b), 2);
         double radiusPow = Math.pow(circle.getR(), 2);
-        return result<=radiusPow;
+        return result <= radiusPow;
     }
 }

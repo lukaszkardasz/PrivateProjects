@@ -51,11 +51,11 @@ public class Rectangle {
 
     @Override
     public String toString() {
-        return "Rectangle{" +
+        return "Prostokąt:" +
                 "\na=" + a.toString() +
-                "\n, b=" + b.toString() +
-                "\n, c=" + c.toString() +
-                "\n, d=" + d.toString() +
-                '}';
+                "\nb=" + b.toString() +
+                "\nc=" + c.toString() +
+                "\nd=" + d.toString() +
+                "\n";
     }
 }
