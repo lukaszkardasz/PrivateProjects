@@ -12,6 +12,7 @@ public class Barman {
         scanner.nextLine();
         Ingredient[] ingridientsTable = new Ingredient[ingNumber];
         for (int i = 0; i < ingridientsTable.length; i++) {
+            //TODO refactor and extract method
             System.out.println("Podaj nazwê " + (i + 1) + " sk³adnika: ");
             String ingridientName = scanner.nextLine();
             System.out.println("Podaj iloœæ " + (i + 1) + " sk³adnika: ");
