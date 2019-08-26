@@ -1,39 +1,20 @@
 package javastart_exercises.barman;
 
+import java.util.Arrays;
+
 public class Drink {
-    Ingredient firstIngridient;
-    Ingredient secondIngridient;
-    Ingredient thirdIngridient;
 
-    public Drink(Ingredient firstIngridient, Ingredient secondIngridient, Ingredient thirdIngridient) {
-        this.firstIngridient = firstIngridient;
-        this.secondIngridient = secondIngridient;
-        this.thirdIngridient = thirdIngridient;
+    Ingredient[] ingredients;
+
+    public Drink(Ingredient[] ingredients) {
+        this.ingredients = ingredients;
     }
 
-    public Ingredient getFirstIngridient() {
-        return firstIngridient;
+    public Ingredient[] getIngredients() {
+        return ingredients;
     }
 
-    public void setFirstIngridient(Ingredient firstIngridient) {
-        this.firstIngridient = firstIngridient;
+    public void setIngredients(Ingredient[] ingredients) {
+        this.ingredients = ingredients;
     }
-
-    public Ingredient getSecondIngridient() {
-        return secondIngridient;
-    }
-
-    public void setSecondIngridient(Ingredient secondIngridient) {
-        this.secondIngridient = secondIngridient;
-    }
-
-    public Ingredient getThirdIngridient() {
-        return thirdIngridient;
-    }
-
-    public void setThirdIngridient(Ingredient thirdIngridient) {
-        this.thirdIngridient = thirdIngridient;
-    }
-
-
 }

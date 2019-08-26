@@ -1,31 +1,32 @@
 package javastart_exercises.barman;
 
+import java.util.Scanner;
+
 public class Barman {
+    private static Scanner scanner = new Scanner(System.in);
 
-    public static Drink createDrink(String ingridient1, double amount1,
-                             String ingridient2, double amount2,
-                             String ingridient3, double amount3) {
-        Ingredient firstIngridient = new Ingredient(ingridient1, amount1);
-        Ingredient secondIngridient = new Ingredient(ingridient2, amount2);
-        Ingredient thirdIngridient = new Ingredient(ingridient3, amount3);
+    public static Drink addIngridients() {
 
-
-
-        return new Drink(firstIngridient, secondIngridient, thirdIngridient);
+        System.out.print("Podaj liczbê drinków: ");
+        int ingNumber = scanner.nextInt();
+        scanner.nextLine();
+        Ingredient[] ingridientsTable = new Ingredient[ingNumber];
+        for (int i = 0; i < ingridientsTable.length; i++) {
+            System.out.println("Podaj nazwê " + (i + 1) + " sk³adnika: ");
+            String ingridientName = scanner.nextLine();
+            System.out.println("Podaj iloœæ " + (i + 1) + " sk³adnika: ");
+            double amount = scanner.nextDouble();
+            scanner.nextLine();
+            ingridientsTable[i] = new Ingredient(ingridientName, amount);
+        }
+        return new Drink(ingridientsTable);
     }
 
-    public static void printDrink(Drink drink){
-        double quantity1 = drink.getFirstIngridient().getQuantity();
-        double quantity2 = drink.getSecondIngridient().getQuantity();
-        double quantity3 = drink.getThirdIngridient().getQuantity();
-        double ingridientSum = quantity1 + quantity2 + quantity3;
 
-        String name1 = drink.getFirstIngridient().getName();
-        String name2 = drink.getSecondIngridient().getName();
-        String name3 = drink.getThirdIngridient().getName();
-        System.out.printf("Sk³adniki drinka to %s, %s, %s" +
-                        "w proporcjach %.2f, %.2f, %.2f," +
-                        "jego pojemnoœæ to %.0fml.\n",
-                name1, name2, name3, quantity1, quantity2, quantity3, ingridientSum);
+    public static void printDrink(Drink drink){
+        System.out.println("Drink sk³ada siê z " + drink.ingredients.length + " sk³adników:");
+        for (Ingredient ingredient : drink.ingredients) {
+            System.out.printf("- %s (%.0f)\n", ingredient.getName(), ingredient.getQuantity());
+        }
     }
 }
