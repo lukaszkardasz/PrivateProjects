@@ -12,15 +12,18 @@ public class Barman {
         scanner.nextLine();
         Ingredient[] ingridientsTable = new Ingredient[ingNumber];
         for (int i = 0; i < ingridientsTable.length; i++) {
-            //TODO refactor and extract method
-            System.out.println("Podaj nazwê " + (i + 1) + " sk³adnika: ");
-            String ingridientName = scanner.nextLine();
-            System.out.println("Podaj iloœæ " + (i + 1) + " sk³adnika: ");
-            double amount = scanner.nextDouble();
-            scanner.nextLine();
-            ingridientsTable[i] = new Ingredient(ingridientName, amount);
+            ingridientsTable[i] = getIngredient(i);
         }
         return new Drink(ingridientsTable);
+    }
+
+    public static Ingredient getIngredient(int i) {
+        System.out.println("Podaj nazwê " + (i + 1) + " sk³adnika: ");
+        String ingridientName = scanner.nextLine();
+        System.out.println("Podaj iloœæ " + (i + 1) + " sk³adnika: ");
+        double amount = scanner.nextDouble();
+        scanner.nextLine();
+        return new Ingredient(ingridientName, amount);
     }
 
 
