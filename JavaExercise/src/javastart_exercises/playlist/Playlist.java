@@ -1,5 +1,7 @@
 package javastart_exercises.playlist;
 
+import java.time.Duration;
+
 /**
  * @author n2god on 28/08/2019
  * @project PrivateProjects
@@ -7,6 +9,10 @@ package javastart_exercises.playlist;
 public class Playlist {
     final static  int SECOND_IN_HOURS = 60 * 60;
     final static int SECOND_IN_MINUTE = 60;
+
+    private Playlist(){
+
+    }
 
     public static int playlistLength(Song... args){
         int lenght = 0;
@@ -17,11 +23,10 @@ public class Playlist {
     }
 
     public static String getFormattedTime(int seconds) {
-        int hours = seconds / SECOND_IN_HOURS;
-        seconds %= SECOND_IN_HOURS;
-
-        int minutes = seconds / SECOND_IN_MINUTE;
-        seconds %= SECOND_IN_MINUTE;
+        Duration duration = Duration.ofSeconds(seconds);
+        int hours = duration.toHoursPart();
+        int minutes = duration.toMinutesPart();
+        seconds = duration.toSecondsPart();
         String hoursPart = timeToString(hours);
         String minutePart = timeToString(minutes);
         String secondsPart = timeToString(seconds);
