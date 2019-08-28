@@ -1,6 +1,4 @@
-package javastart_exercises.barman;
-
-import java.util.Arrays;
+package javastart_exercises.barman_v2;
 
 public class Drink {
 

@@ -1,4 +1,4 @@
-package javastart_exercises.barman;
+package javastart_exercises.barman_v2;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class Barman {
 
     public static Drink addIngridients() {
 
-        System.out.print("Podaj liczbê drinków: ");
+        System.out.print("Podaj liczbï¿½ drinkï¿½w: ");
         int ingNumber = scanner.nextInt();
         scanner.nextLine();
         Ingredient[] ingridientsTable = new Ingredient[ingNumber];
@@ -18,9 +18,9 @@ public class Barman {
     }
 
     public static Ingredient getIngredient(int i) {
-        System.out.println("Podaj nazwê " + (i + 1) + " sk³adnika: ");
+        System.out.println("Podaj nazwï¿½ " + (i + 1) + " skï¿½adnika: ");
         String ingridientName = scanner.nextLine();
-        System.out.println("Podaj iloœæ " + (i + 1) + " sk³adnika: ");
+        System.out.println("Podaj iloï¿½ï¿½ " + (i + 1) + " skï¿½adnika: ");
         double amount = scanner.nextDouble();
         scanner.nextLine();
         return new Ingredient(ingridientName, amount);
@@ -28,7 +28,7 @@ public class Barman {
 
 
     public static void printDrink(Drink drink){
-        System.out.println("Drink sk³ada siê z " + drink.ingredients.length + " sk³adników:");
+        System.out.println("Drink skï¿½ada siï¿½ z " + drink.ingredients.length + " skï¿½adnikï¿½w:");
         for (Ingredient ingredient : drink.ingredients) {
             System.out.printf("- %s (%.0f)\n", ingredient.getName(), ingredient.getQuantity());
         }

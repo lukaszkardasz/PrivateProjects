@@ -1,4 +1,4 @@
-package javastart_exercises.barman;
+package javastart_exercises.barman_v2;
 
 
 public class BarmanTest {
