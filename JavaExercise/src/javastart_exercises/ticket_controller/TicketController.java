@@ -16,7 +16,7 @@ public class TicketController {
         passengers[0] = new Passenger("Jan", "Kowalski");
         passengers[1] = new Passenger("Benek", "Grucha");
         passengers[2] = new Passenger("Wacek", "Fiut");
-        passengers[3] = new Passenger("Anna", "Kutasek");
+        passengers[3] = new Passenger("Anna", "Psikuta bez s");
         passengers[4] = new Passenger("Gienia", "Klops");
 
         TicketMachine.buyTicket(passengers[0], 15);
