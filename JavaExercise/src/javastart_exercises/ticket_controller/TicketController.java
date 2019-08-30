@@ -1,6 +1,8 @@
 package javastart_exercises.ticket_controller;
 
 import java.time.*;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 /**
  * @author n2god on 28/08/2019
@@ -20,7 +22,34 @@ public class TicketController {
         TicketMachine.buyTicket(passengers[0], 15);
         TicketMachine.buyTicket(passengers[1], 30);
 
+        Ticket notGoodTicket = new Ticket(LocalDateTime.now().minusMinutes(20), 15);
+        passengers[2].setTicket(notGoodTicket);
 
+        Passenger[] passengersWithoutTicket = validateTickets(passengers);
+        System.out.println("Jadą na gapę: ");
+        for (Passenger passenger : passengersWithoutTicket) {
+            System.out.println(passenger.getFirstName() + " " + passenger.getLastName());
+        }
 
+    }
+
+    private static Passenger[] validateTickets(Passenger[] passengers) {
+        int passengersWithoutTicket = 0;
+        for (Passenger passenger : passengers) {
+            Ticket ticket = passenger.getTicket();
+            if(ticket == null || !ticket.isValid())
+                passengersWithoutTicket++;
+        }
+
+        Passenger[] withoutTicket = new Passenger[passengersWithoutTicket];
+        for (int i = 0, j = 0; i < passengers.length; i++) {
+            Ticket ticket = passengers[i].getTicket();
+            if(ticket == null || !ticket.isValid()) {
+                withoutTicket[j] = passengers[i];
+                j++;
+            }
+        }
+
+        return withoutTicket;
     }
 }
