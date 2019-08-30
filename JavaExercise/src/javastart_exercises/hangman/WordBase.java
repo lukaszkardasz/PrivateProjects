@@ -7,18 +7,14 @@ import java.util.Random;
  * @project PrivateProjects
  */
 public class WordBase {
-    public String[] words = {"Ala ma kota", "Javastart", "Matrix"};
+    Random generator = new Random();
 
-    public WordBase(String[] words) {
-        this.words = words;
-    }
-
-    public String[] getWords() {
-        return words;
-    }
+    private final String[] words = {"Ala ma kota",
+            "Javastart",
+            "Matrix"};
 
     public String getRandomWord(){
-        Random generator = new Random();
-        return words[generator.nextInt(words.length)];
+        int randomIndex = generator.nextInt(words.length);
+        return words[randomIndex];
     }
 }
