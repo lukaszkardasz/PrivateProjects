@@ -9,10 +9,9 @@ public class Passenger {
     private String lastName;
     private Ticket ticket;
 
-    public Passenger(String firstName, String lastName, Ticket ticket) {
+    public Passenger(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.ticket = ticket;
     }
 
     public String getFirstName() {

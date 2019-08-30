@@ -1,34 +1,38 @@
 package javastart_exercises.ticket_controller;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 /**
  * @author n2god on 28/08/2019
  * @project PrivateProjects
  */
+
 public class Ticket {
-    private LocalDateTime TicketDeletedTime;
-    private int duration;
 
-    public Ticket(LocalDateTime ticketDeletedTime, int duration) {
-        TicketDeletedTime = ticketDeletedTime;
-        this.duration = duration;;
+    private final LocalDateTime timeOfPurchase;
+    private final int validityTime;
+
+    public Ticket (int validityTime){
+        this(LocalDateTime.now(), validityTime);
     }
 
-    public LocalDateTime getTicketDeletedTime() {
-        return TicketDeletedTime;
+    public Ticket(LocalDateTime timeOfPurchase, int validityTime) {
+        this.timeOfPurchase = timeOfPurchase;
+        this.validityTime = validityTime;
     }
 
-    public void setTicketDeletedTime(LocalDateTime ticketDeletedTime) {
-        TicketDeletedTime = ticketDeletedTime;
+    public LocalDateTime getTimeOfPurchase() {
+        return timeOfPurchase;
     }
 
-    public int getDuration() {
-        return duration;
+    public int getValidityTime() {
+        return validityTime;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public boolean isValid(){
+        LocalDateTime currentTime = LocalDateTime.now();
+        Duration duration = Duration.between(timeOfPurchase, currentTime);
+        return duration.toMinutes() < validityTime;
     }
-
 }

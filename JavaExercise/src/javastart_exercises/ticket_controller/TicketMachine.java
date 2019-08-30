@@ -1,5 +1,6 @@
 package javastart_exercises.ticket_controller;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 /**
@@ -7,7 +8,8 @@ import java.time.LocalDateTime;
  * @project PrivateProjects
  */
 public class TicketMachine {
-    public void buyTicket(Passenger passenger, int lenght){
-        passenger.setTicket(new Ticket(LocalDateTime.now(), lenght));
+    public static void buyTicket(Passenger passenger, int timeInMinutes){
+        Ticket ticket = new Ticket(timeInMinutes);
+        passenger.setTicket(ticket);
     }
 }

@@ -1,8 +1,6 @@
 package javastart_exercises.ticket_controller;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 
 /**
  * @author n2god on 28/08/2019
@@ -10,8 +8,19 @@ import java.time.LocalTime;
  */
 public class TicketController {
     public static void main(String[] args) {
-        Passenger passenger1 = new Passenger("Piotr",
-                "Klamka",
-                new Ticket(new LocalDateTime(LocalDate.now(), LocalTime.of(11,00,00,00))));
+
+        Passenger[] passengers = new Passenger[5];
+
+        passengers[0] = new Passenger("Jan", "Kowalski");
+        passengers[1] = new Passenger("Benek", "Grucha");
+        passengers[2] = new Passenger("Wacek", "Fiut");
+        passengers[3] = new Passenger("Anna", "Kutasek");
+        passengers[4] = new Passenger("Gienia", "Klops");
+
+        TicketMachine.buyTicket(passengers[0], 15);
+        TicketMachine.buyTicket(passengers[1], 30);
+
+
+
     }
 }
