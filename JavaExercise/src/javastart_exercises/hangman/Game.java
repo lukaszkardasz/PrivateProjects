@@ -19,13 +19,23 @@ public class Game {
             play();
             showOptions();
             option = scanner.nextInt();
-            scanner.nextLine()
+            scanner.nextLine();
         }
         System.out.println("PaPa!");
     }
 
     private void play() {
+        Hangman hangman = new Hangman(wb.getRandomWord());
+        do {
 
+        } while (!hangman.userLost() && !hangman.userWon());
+        System.out.println();
+        if(hangman.userWon()){
+            System.out.println("Wygrałeś!");
+            System.out.printf("Hasło: %s\n\n", hangman.getGuessWord());
+        } else if (hangman.userLost()){
+            System.out.println("Przegrałeś!");
+        }
     }
 
     private void showOptions() {
