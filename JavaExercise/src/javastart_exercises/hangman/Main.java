@@ -5,4 +5,8 @@ package javastart_exercises.hangman;
  * @project PrivateProjects
  */
 public class Main {
+    public static void main(String[] args) {
+        Game game = new Game();
+        game.mainLoop();
+    }
 }

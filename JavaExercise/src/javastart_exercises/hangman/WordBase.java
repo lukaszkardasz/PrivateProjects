@@ -7,7 +7,7 @@ import java.util.Random;
  * @project PrivateProjects
  */
 public class WordBase {
-    Random generator = new Random();
+    private Random generator = new Random();
 
     private final String[] words = {"Ala ma kota",
             "Javastart",
