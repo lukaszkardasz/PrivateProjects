@@ -24,4 +24,13 @@ public class Game {
         System.out.println("PaPa!");
     }
 
+    private void play() {
+
+    }
+
+    private void showOptions() {
+        System.out.println(NEXT_GAME + " - Continue game");
+        System.out.println(EXIT_GAME + " - Exit game");
+    }
+
 }
