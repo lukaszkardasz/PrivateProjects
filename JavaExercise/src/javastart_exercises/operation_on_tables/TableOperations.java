@@ -9,35 +9,32 @@ import java.util.Arrays;
 public class TableOperations {
 
 
-    public static int[][] biggerSum(int[][] table1, int[][] table2) {
-        if (sumTableInt(table1) > sumTableInt(table2)) return table1;
-        else if (sumTableInt(table1) < sumTableInt(table2)) return table2;
-        return new int[][]{};
+    public static int[][] getBiggerArray(int[][] table1, int[][] table2) {
+        int sum1 = sumMultiArray(table1);
+        int sum2 = sumMultiArray(table2);
+        return sum1 > sum2 ? table1:table2;
     }
 
-    private static int sumTableInt(int[][] table) {
-        int sumTable1 = 0;
-        for (int i = 0; i < table[0].length; i++) {
-            sumTable1 += table[0][i] + table[table.length - 1][i];
+    private static int sumMultiArray(int[][] table) {
+        int sum = 0;
+        for (int[] ints : table) {
+            for (int number : ints) {
+                sum += number;
+            }
         }
-        for (int j = 0; j < table.length - 1; j++) {
-            sumTable1 += table[j][0] + table[j][table[0].length - 1];
-        }
-        return sumTable1;
+        return sum;
     }
 
     public static String[] longerLenght(String[] table1, String[] table2){
-        if (lenghtCheck(table1) > (lenghtCheck(table2))) return table1;
-        else if (lenghtCheck(table1) < (lenghtCheck(table2))) return table2;
-        return new String[]{};
+        int chars1 = lenghtCheck(table1);
+        int chars2 = lenghtCheck(table2);
+        return chars1 > chars2 ? table1:table2 ;
     }
 
-    private static int lenghtCheck(String[] table1) {
-        int table1Lenght = 0;
-        for (int i = 0; i < table1.length; i++) {
-            table1Lenght +=table1[i].length();
-        }
-        return table1Lenght;
+    private static int lenghtCheck(String[] table) {
+        return Arrays.stream(table)
+                .mapToInt(String::length)
+                .sum();
     }
     public static int biggestNumberFromTable(int[] table){
         Arrays.sort(table);

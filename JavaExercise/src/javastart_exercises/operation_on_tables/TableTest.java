@@ -13,7 +13,7 @@ public class TableTest {
         int []table = new int[]{5, 10, 15, 20, 25};
 
         //biggest table sum
-        int[][] biggestTableSum = TableOperations.biggerSum(table1, table2);
+        int[][] biggestTableSum = TableOperations.getBiggerArray(table1, table2);
         for (int[] ints : biggestTableSum) {
             for (int anInt : ints) {
                 System.out.print(anInt + ", ");
