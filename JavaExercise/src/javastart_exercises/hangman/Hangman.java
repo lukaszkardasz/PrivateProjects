@@ -36,6 +36,17 @@ public class Hangman {
         }
     }
 
+    private void checkMistake(char letter) {
+        if(guessWord.indexOf(letter) == -1){
+            mistakes++;
+        }
+    }
+
+    private void rememberGuess(char letter) {
+        userGuesses[guess] = letter;
+        guess++;
+    }
+
     private void generateDisplay() {
         String display = "";
         for (int i = 0; i < guessWord.length(); i++) {
