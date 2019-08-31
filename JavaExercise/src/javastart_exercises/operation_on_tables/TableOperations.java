@@ -1,5 +1,7 @@
 package javastart_exercises.operation_on_tables;
 
+import java.util.Arrays;
+
 /**
  * @author n2god on 31/08/2019
  * @project PrivateProjects
@@ -36,5 +38,14 @@ public class TableOperations {
             table1Lenght +=table1[i].length();
         }
         return table1Lenght;
+    }
+    public static int biggestNumberFromTable(int[] table){
+        Arrays.sort(table);
+        return table[table.length-1];
+    }
+
+    public static int lowestNumberFromTable(int[] table){
+        Arrays.sort(table);
+        return table[0];
     }
 }

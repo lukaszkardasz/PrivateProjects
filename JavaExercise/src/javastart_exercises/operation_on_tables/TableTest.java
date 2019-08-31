@@ -10,7 +10,7 @@ public class TableTest {
         int[][] table2 = new int[][]{{10,2,3,4},{5,2,3,4},{4,6,2,1},{4,3,62,1}};
         String[] stringTable1 = new String[]{"aa", "bb", "cc"};
         String[] stringTable2 = new String[]{"aaa", "bba", "ccc"};
-
+        int []table = new int[]{5, 10, 15, 20, 25};
 
         //biggest table sum
         int[][] biggestTableSum = TableOperations.biggerSum(table1, table2);
@@ -26,5 +26,11 @@ public class TableTest {
         for (String s : longestStringTable) {
             System.out.print(s + ", ");
         }
+
+        //biggest number from int table
+
+        int max = TableOperations.biggestNumberFromTable(table);
+        int min = TableOperations.lowestNumberFromTable(table);
+        System.out.println("\nTable: " + "min: " + min + ", max: " + max);
     }
 }
