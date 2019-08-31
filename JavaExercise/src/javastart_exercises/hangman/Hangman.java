@@ -29,6 +29,23 @@ public class Hangman {
     }
 
     private void generateDisplay() {
+        String display = "";
+        for (int i = 0; i < guessWord.length(); i++) {
+            char nextChar = guessWord.charAt(i);
+            if(arrayContains(userGuesses, nextChar)){
+                display += nextChar;
+            } else if(nextChar == ' '){
+                display += ' ';
+            } else display += '*';
+        }
+        this.guessWordDisplay = display;
+    }
 
+    private boolean arrayContains(char[] array, char letter) {
+        for (char element : array) {
+            if (element == letter)
+                return true;
+        }
+        return false;
     }
 }
