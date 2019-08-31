@@ -28,6 +28,14 @@ public class Hangman {
         return guessWordDisplay;
     }
 
+    public void checkLetter(char letter){
+        if(!arrayContains(userGuesses,letter)){
+            checkMistake(letter);
+            rememberGuess(letter);
+            generateDisplay();
+        }
+    }
+
     private void generateDisplay() {
         String display = "";
         for (int i = 0; i < guessWord.length(); i++) {
@@ -47,5 +55,12 @@ public class Hangman {
                 return true;
         }
         return false;
+    }
+    public boolean userLost(){
+        return mistakes >= MAX_MISTAKES;
+    }
+
+    public boolean userWon(){
+        return !guessWordDisplay.contains("*");
     }
 }
