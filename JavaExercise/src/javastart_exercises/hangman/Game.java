@@ -11,15 +11,15 @@ public class Game {
     private static final int EXIT_GAME = 2;
 
     private WordBase wb = new WordBase();
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     public void mainLoop() {
         int option = NEXT_GAME;
         while (option != EXIT_GAME) {
             play();
             showOptions();
-            option = scanner.nextInt();
-            scanner.nextLine();
+            option = sc.nextInt();
+            sc.nextLine();
         }
         System.out.println("PaPa!");
     }
@@ -31,7 +31,7 @@ public class Game {
             String guessWordDisplay = hangman.getGuessWordDisplay();
             System.out.println(guessWordDisplay);
             System.out.println("Podaj literę:");
-            String line = scanner.nextLine();
+            String line = sc.nextLine();
             char userGuess = line.charAt(0);
             hangman.checkLetter(userGuess);
         } while (!hangman.userLost() && !hangman.userWon());
