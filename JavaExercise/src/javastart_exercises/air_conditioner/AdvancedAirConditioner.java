@@ -1,6 +1,6 @@
 package javastart_exercises.air_conditioner;
 
-public class BasicAirConditioner implements AirConditioner {
+public class AdvancedAirConditioner implements AirConditioner {
     private static double COOLING_PER_MINUTE = 1;
 
     @Override
@@ -10,6 +10,6 @@ public class BasicAirConditioner implements AirConditioner {
 
     @Override
     public String toString() {
-        return "BasicAirConditioner";
+        return "AdvancedAirConditioner";
     }
 }

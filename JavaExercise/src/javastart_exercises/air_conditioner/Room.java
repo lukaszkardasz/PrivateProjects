@@ -4,12 +4,12 @@ import java.time.LocalDateTime;
 
 public class Room {
     private double temperature;
-    private LocalDateTime time;
+    private double cubature;
     private boolean isConditionerEnabled;
 
-    public Room(double temperature, LocalDateTime time, boolean isConditionerEnabled) {
+    public Room(double temperature, double cubature, boolean isConditionerEnabled) {
         this.temperature = temperature;
-        this.time = time;
+        this.cubature = cubature;
         this.isConditionerEnabled = isConditionerEnabled;
     }
 
@@ -29,19 +29,19 @@ public class Room {
         this.temperature = temperature;
     }
 
-    public LocalDateTime getTime() {
-        return time;
+    public double getCubature() {
+        return cubature;
     }
 
-    public void setTime(LocalDateTime time) {
-        this.time = time;
+    public void setcubature(double cubature) {
+        this.cubature = cubature;
     }
 
     @Override
     public String toString() {
         return "Room{" +
                 "temperature=" + temperature +
-                ", time=" + time +
+                ", cubature=" + cubature +
                 ", isConditionerEnabled=" + isConditionerEnabled +
                 '}';
     }

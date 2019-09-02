@@ -2,6 +2,6 @@ package javastart_exercises.air_conditioner;
 
 public interface AirConditioner {
 
-    public void cool(Room room);
+    public double cool(double temperature, double cubature);
 
 }
