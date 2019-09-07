@@ -36,7 +36,7 @@ public class Building {
 
     public boolean areAllRoomsCool() {
         for (Room room : rooms) {
-            if (room.getCurrentTemperature() >= room.getTargetTemperature()) {
+            if (room.getCurrentTemperature() > room.getTargetTemperature()) {
                 return true;
             }
         }
