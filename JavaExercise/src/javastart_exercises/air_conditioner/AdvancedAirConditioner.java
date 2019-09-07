@@ -1,10 +1,11 @@
 package javastart_exercises.air_conditioner;
 
 public class AdvancedAirConditioner implements AirConditioner {
-    private static double COOLING_PER_MINUTE = 1;
+    private static double COOLING_PER_MINUTE = 2;
 
     @Override
     public double cool(double temperature, double cubature) {
+
         return temperature - (COOLING_PER_MINUTE / cubature);
     }
 

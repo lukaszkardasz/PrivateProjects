@@ -36,11 +36,11 @@ public class Building {
 
     public boolean areAllRoomsCool() {
         for (Room room : rooms) {
-            if (room.getCurrentTemperature() > room.getTargetTemperature()) {
-                return true;
+            if (room.getCurrentTemperature() >= room.getTargetTemperature()) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public void enableAirConditioner() {

@@ -1,5 +1,6 @@
 package javastart_exercises.air_conditioner;
 
+import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 
 public class Room {
@@ -75,9 +76,10 @@ public class Room {
 
     @Override
     public String toString() {
+        DecimalFormat df = new DecimalFormat("#.00");
         return "Room{" +
                 "number=" + number +
-                ", currentTemperature=" + String.format("%.2f", currentTemperature) +
+                ", currentTemperature=" + currentTemperature +
                 ", targetTemperature=" + targetTemperature +
                 ", cubature=" + cubature +
                 ", airConditioner=" + airConditioner +
