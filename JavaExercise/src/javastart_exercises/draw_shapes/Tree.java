@@ -17,6 +17,26 @@ public class Tree implements Drawable {
 
     @Override
     public void draw() {
+        int spaces = height -1;
+        int stars = 1;
+        for (int i = 0; i < height; i++) {
+            drawStars(stars);
+            drawSpaces(spaces);
+            System.out.println();
+            spaces--;
+            stars += 2;
+        }
+    }
 
+    private void drawSpaces(int spaces) {
+        for (int i = 0; i < spaces; i++) {
+            System.out.print(' ');
+        }
+    }
+
+    private void drawStars(int stars) {
+        for (int i = 0; i < stars; i++) {
+            System.out.print("*");
+        }
     }
 }

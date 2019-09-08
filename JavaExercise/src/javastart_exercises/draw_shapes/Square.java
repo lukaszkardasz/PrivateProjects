@@ -17,6 +17,11 @@ public class Square implements Drawable {
 
     @Override
     public void draw() {
-
+        for (int i = 0; i < getSize(); i++) {
+            for (int j = 0; j < getSize(); j++) {
+                System.out.print("* ");
+            }
+            System.out.println("");
+        }
     }
 }

@@ -15,6 +15,7 @@ public class ShapeDrawer {
         if (drawable != null) {
             drawable.draw();
         }
+        sc.close();
     }
 
 
@@ -27,9 +28,9 @@ public class ShapeDrawer {
             case SQUARE_NAME -> drawable = readAndDrawSquare();
             case RECTANGLE_NAME -> drawable = readAndDrawRectangle();
             case TREE_NAME -> drawable = readAndDrawTree();
-            default -> throw new IllegalArgumentException("Taki kszta³t nie istnieje");
+            default -> throw new IllegalArgumentException("Taki kszta³t nie istnieje!");
         }
-        System.out.println("Wybrano " + element);
+        System.out.println("Wybrano " + element + ":");
         return drawable;
     }
 
@@ -41,9 +42,9 @@ public class ShapeDrawer {
 
     private static Drawable readAndDrawRectangle() {
         System.out.println("Podaj d³ugoœæ i wysokoœæ prostok¹ta");
-        System.out.print("D³ugoœæ: ");
+        System.out.println("D³ugoœæ: ");
         int width = sc.nextInt();
-        System.out.print("\n Wysokoœæ: ");
+        System.out.println("Wysokoœæ: ");
         int height = sc.nextInt();
         return new Rectangle(width, height);
     }
