@@ -20,8 +20,8 @@ public class Tree implements Drawable {
         int spaces = height -1;
         int stars = 1;
         for (int i = 0; i < height; i++) {
-            drawStars(stars);
             drawSpaces(spaces);
+            drawStars(stars);
             System.out.println();
             spaces--;
             stars += 2;
