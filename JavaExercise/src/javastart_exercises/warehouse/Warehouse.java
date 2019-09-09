@@ -3,10 +3,7 @@ package javastart_exercises.warehouse;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Warehouse {
@@ -14,13 +11,17 @@ public class Warehouse {
         String filename = getFilename();
         List<String> allLines = readFile(filename);
 
-        Map<String, Integer> map = allLines.stream()
+        Map<String, String> map = allLines
+                .stream()
                 .map(s -> s.split(";"))
-                .collect(Collectors.groupingBy(Map.Entry::getKey,
-                        Collectors.mapping(Map.Entry::getValue,
-                                Collectors.toList())));
+                .collect(Collectors.toMap());
 
+        String content = map.entrySet()
+                .stream()
+                .map(e -> e.getKey() + "=\"" + e.getValue() + "\"")
+                .collect(Collectors.joining(", "));
 
+        System.out.println(content);
 
 
     }
