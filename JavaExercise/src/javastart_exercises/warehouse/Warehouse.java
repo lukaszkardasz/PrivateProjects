@@ -4,15 +4,25 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Warehouse {
     public static void main(String[] args) {
         String filename = getFilename();
         Map<String, Integer> map = readProductsFromList(filename);
+        printStats(map);
 
-        map.
 
+    }
+
+    private static void printStats(Map<String, Integer> map) {
+        map.forEach((k, v) -> {
+            System.out.printf("%-30s (%d) %s\n",k, v, getStars(v));
+        });
+    }
+
+    private static String getStars(Integer v) {
+        int starsNumber = Math.round(v) / 10;
+        return String.join("", Collections.nCopies(starsNumber, "*"));
     }
 
     private static Map<String, Integer> readProductsFromList(String filename){
