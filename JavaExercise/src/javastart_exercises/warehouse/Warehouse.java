@@ -9,21 +9,20 @@ import java.util.stream.Collectors;
 public class Warehouse {
     public static void main(String[] args) {
         String filename = getFilename();
-        List<String> allLines = readFile(filename);
+        Map<String, Integer> map = readProductsFromList(filename);
 
-        Map<String, String> map = allLines
-                .stream()
-                .map(s -> s.split(";"))
-                .collect(Collectors.toMap());
+        map.
 
-        String content = map.entrySet()
-                .stream()
-                .map(e -> e.getKey() + "=\"" + e.getValue() + "\"")
-                .collect(Collectors.joining(", "));
+    }
 
-        System.out.println(content);
-
-
+    private static Map<String, Integer> readProductsFromList(String filename){
+        List<String> allLines = readFileToList(filename);
+        Map<String, Integer> result = new HashMap<>();
+        for (String line : allLines) {
+            String[] elements = line.split(";");
+            result.put(elements[0],Integer.valueOf(elements[1]));
+        }
+        return result;
     }
 
     private static String getFilename() {
@@ -32,7 +31,9 @@ public class Warehouse {
         return scanner.nextLine();
     }
 
-    private static List<String> readFile(String filename){
+    //2400
+
+    private static List<String> readFileToList(String filename){
         try {
             return Files.readAllLines(Paths.get(filename));
         } catch (IOException e) {
