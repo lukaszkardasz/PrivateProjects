@@ -1,5 +1,7 @@
 package javastart_exercises.game_statistics.java7_style;
 
+import java.util.Objects;
+
 public class Player implements Comparable<Player>{
     private String nickName;
     private int score;
@@ -33,5 +35,19 @@ public class Player implements Comparable<Player>{
     @Override
     public int compareTo(Player player) {
         return Integer.compare(player.getScore(), this.score);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return score == player.score &&
+                Objects.equals(nickName, player.nickName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nickName, score);
     }
 }

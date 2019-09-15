@@ -1,7 +1,6 @@
 package javastart_exercises.game_statistics.java7_style;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class PlayerSorting {
     public static void main(String[] args) {
