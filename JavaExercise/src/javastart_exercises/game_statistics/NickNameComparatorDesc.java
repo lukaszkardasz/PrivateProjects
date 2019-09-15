@@ -5,6 +5,6 @@ import java.util.Comparator;
 public class NickNameComparatorDesc implements Comparator<Player> {
     @Override
     public int compare(Player p1, Player p2) {
-        return p2.getNickName().compareTo(p1.getNickName());
+        return p2.getNickName().toLowerCase().compareTo(p1.getNickName().toLowerCase());
     }
 }
