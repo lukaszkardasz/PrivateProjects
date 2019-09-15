@@ -1,4 +1,4 @@
-package javastart_exercises.game_statistics;
+package javastart_exercises.game_statistics.java7_style;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -17,12 +17,7 @@ public class PlayerSorting {
         Arrays.sort(players);
         System.out.println(Arrays.toString(players));
 
-        Arrays.sort(players, new Comparator<Player>() {
-            @Override
-            public int compare(Player p1, Player p2) {
-                return Integer.compare(p1.getScore(), p2.getScore());
-            }
-        });
+        Arrays.sort(players, (p1, p2) -> Integer.compare(p1.getScore(), p2.getScore()));
 
         System.out.println("Posortowane po punktach rosn¹co: ");
         System.out.println(Arrays.toString(players));

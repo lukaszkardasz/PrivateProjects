@@ -1,4 +1,4 @@
-package javastart_exercises.game_statistics;
+package javastart_exercises.game_statistics.java7_style;
 
 public class Player implements Comparable<Player>{
     private String nickName;
