@@ -5,6 +5,7 @@ import java.util.Comparator;
 /**
  * @author n2god on 23/09/2019
  * @project PrivateProjects
+ * sortowanie wykorzystujące comparator i referencje do metod
  */
 public enum MovieComparator {
 
@@ -19,8 +20,8 @@ public enum MovieComparator {
     */
 
     TITLE("Title", Comparator.comparing(Movie::getTitle)),
-    RATING("Rating", Comparator.comparingDouble(Movie::getRating).reversed()),
-    YEAR("Year", Comparator.comparingInt(Movie::getYear).reversed());
+    RATING("Rating", Comparator.comparing(Movie::getRating).reversed()),
+    YEAR("Year", Comparator.comparing(Movie::getYear).reversed());
 
     private final String criteria;
     private final Comparator<Movie> comparator;
