@@ -38,5 +38,12 @@ public enum MovieComparator {
         return comparator;
     }
 
-
+    public static MovieComparator convert(String criteria){
+        MovieComparator[] values = MovieComparator.values();
+        for (MovieComparator value : values) {
+            if (value.getCriteria().toLowerCase().equals(criteria.toLowerCase()));
+            return value;
+        }
+        throw new IllegalArgumentException("Nieprawidłowe kryterium sortowania " + criteria);
+    }
 }
