@@ -10,10 +10,12 @@ public class MovieDatabase {
     public static void main(String[] args) {
         List<Movie> moviesList = createMoviesList();
         Comparator<Movie> sortAlgorithm = getSortAlgorithm(); //TODO
-        moviesList(sortAlgorithm);
+//        moviesList(sortAlgorithm);
         print(moviesList);
 
     }
+
+
 
     private static List<Movie> createMoviesList() {
         List<Movie> movies = new ArrayList<>();
