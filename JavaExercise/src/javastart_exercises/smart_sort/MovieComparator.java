@@ -7,7 +7,6 @@ import java.util.Comparator;
  * @project PrivateProjects
  */
 public enum MovieComparator {
-    TITLE("Title", Comparator.comparing(Movie::getTitle)),
 
     /*
      or before java 8:
@@ -19,8 +18,9 @@ public enum MovieComparator {
     }),
     */
 
-    RATING("Rating", Comparator.comparing(Movie::getRating).reversed()),
-    YEAR("Year", Comparator.comparing(Movie::getYear).reversed());
+    TITLE("Title", Comparator.comparing(Movie::getTitle)),
+    RATING("Rating", Comparator.comparingDouble(Movie::getRating).reversed()),
+    YEAR("Year", Comparator.comparingInt(Movie::getYear).reversed());
 
     private final String criteria;
     private final Comparator<Movie> comparator;
@@ -41,8 +41,9 @@ public enum MovieComparator {
     public static MovieComparator convert(String criteria){
         MovieComparator[] values = MovieComparator.values();
         for (MovieComparator value : values) {
-            if (value.getCriteria().toLowerCase().equals(criteria.toLowerCase()));
-            return value;
+            if (value.getCriteria().equalsIgnoreCase(criteria)) {
+                return value;
+            }
         }
         throw new IllegalArgumentException("Nieprawidłowe kryterium sortowania " + criteria);
     }

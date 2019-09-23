@@ -50,6 +50,16 @@ public class Movie implements Comparable<Movie> {
     }
 
     @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", director='" + director + '\'' +
+                ", year=" + year +
+                ", rating=" + rating +
+                '}';
+    }
+
+    @Override
     public int compareTo(Movie m) {
         return title.compareTo(m.title);
     }

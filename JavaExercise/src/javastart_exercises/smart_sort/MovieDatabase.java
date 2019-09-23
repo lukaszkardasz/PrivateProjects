@@ -9,13 +9,10 @@ import java.util.*;
 public class MovieDatabase {
     public static void main(String[] args) {
         List<Movie> moviesList = createMoviesList();
-        Comparator<Movie> sortAlgorithm = getSortAlgorithm(); //TODO
-//        moviesList(sortAlgorithm);
+        Comparator<Movie> sortAlgorithm = getSortAlgorithm();
+        moviesList.sort(sortAlgorithm);
         print(moviesList);
-
     }
-
-
 
     private static List<Movie> createMoviesList() {
         List<Movie> movies = new ArrayList<>();
@@ -30,8 +27,25 @@ public class MovieDatabase {
     }
 
     private static Comparator<Movie> getSortAlgorithm() {
-        //TODO
-        return null;
+        System.out.println("Wybierz kryterium sortowania: ");
+        printSortingAlghoritms();
+        Scanner sc = new Scanner(System.in);
+        String userInput = sc.nextLine();
+        MovieComparator alghoritm = null;
+        try {
+            alghoritm = MovieComparator.convert(userInput);
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
+        return alghoritm != null ? alghoritm.getComparator() : null;
+
+    }
+
+    private static void printSortingAlghoritms() {
+        MovieComparator[] comparators = MovieComparator.values();
+        for (MovieComparator comparator : comparators) {
+            System.out.printf("\t> %s\n", comparator.getCriteria());
+        }
     }
 
     private static void print(List<Movie> movies) {
