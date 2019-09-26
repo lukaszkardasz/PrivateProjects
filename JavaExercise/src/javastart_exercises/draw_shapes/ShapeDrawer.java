@@ -21,30 +21,30 @@ public class ShapeDrawer {
 
     private static Drawable readAndCreateShape() {
         Drawable drawable = null;
-        System.out.println("Co chcesz narysowaæ? (square / rectangle / tree)");
+        System.out.println("Co chcesz narysowaï¿½? (square / rectangle / tree)");
         String element = sc.nextLine();
 
         switch(element){
             case SQUARE_NAME -> drawable = readAndDrawSquare();
             case RECTANGLE_NAME -> drawable = readAndDrawRectangle();
             case TREE_NAME -> drawable = readAndDrawTree();
-            default -> throw new IllegalArgumentException("Taki kszta³t nie istnieje!");
+            default -> throw new IllegalArgumentException("Taki ksztaÅ‚t nie istnieje!");
         }
         System.out.println("Wybrano " + element + ":");
         return drawable;
     }
 
     private static Drawable readAndDrawTree() {
-        System.out.println("Podaj wysokoœæ choinki");
+        System.out.println("Podaj wysokoï¿½ï¿½ choinki");
         int height = sc.nextInt();
         return new Tree(height);
     }
 
     private static Drawable readAndDrawRectangle() {
-        System.out.println("Podaj d³ugoœæ i wysokoœæ prostok¹ta");
-        System.out.println("D³ugoœæ: ");
+        System.out.println("Podaj dï¿½ugoï¿½ï¿½ i wysokoï¿½ï¿½ prostokï¿½ta");
+        System.out.println("Dï¿½ugoï¿½ï¿½: ");
         int width = sc.nextInt();
-        System.out.println("Wysokoœæ: ");
+        System.out.println("Wysokoï¿½ï¿½: ");
         int height = sc.nextInt();
         return new Rectangle(width, height);
     }
