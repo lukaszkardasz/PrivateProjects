@@ -1,8 +1,6 @@
 package javastart_exercises.lotery_statistics;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class LotteryStats {
@@ -16,5 +14,12 @@ public class LotteryStats {
         }
         return numbersOccurences;
     }
+
+    static Stream<Map.Entry<Integer, Integer>> mostPopularNumbers(List<Result> results){
+        return numbersOccurences(results).entrySet().stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()));
+    }
+
+
 
 }
