@@ -1,6 +1,8 @@
 package javastart_exercises.lotery_statistics;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class LotteryStats {
@@ -20,6 +22,11 @@ public class LotteryStats {
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()));
     }
 
-
-
+    static Stream<Map.Entry<Integer, Long>> mostPopularMegaBall(List<Result> results){
+        return results.stream()
+                .map(Result::getMegaBall)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()));
+    }
 }
