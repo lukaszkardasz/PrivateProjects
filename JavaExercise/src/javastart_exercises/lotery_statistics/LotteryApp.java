@@ -1,6 +1,5 @@
 package javastart_exercises.lotery_statistics;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
