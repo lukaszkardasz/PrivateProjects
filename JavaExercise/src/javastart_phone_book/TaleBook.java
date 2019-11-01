@@ -49,8 +49,8 @@ public class TaleBook {
             if (contact.getPhoneNumber().contains(telephone)) {
                 result.add(contact);
             }
-            return result;
         }
+        return result;
     }
 
 }
