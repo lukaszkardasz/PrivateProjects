@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.TreeMap;
 import java.util.Map;
 
-public class TaleBook {
+public class PhoneBook {
     private Map<String, Contact> contacts = new TreeMap<>();
 
-    public TaleBook() {
+    public PhoneBook() {
     }
 
-    public TaleBook(Map<String, Contact> contacts) {
+    public PhoneBook(Map<String, Contact> contacts) {
         this.contacts = contacts;
     }
 
