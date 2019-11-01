@@ -19,7 +19,9 @@ public class PhoneBookController {
     }
 
     private OPTIONS chooseOption(){
-        return null;
+        int option = sc.nextInt();
+        sc.nextLine();
+        return OPTIONS.convertToOption(option);
     }
 
     private void executeOption(OPTIONS option){

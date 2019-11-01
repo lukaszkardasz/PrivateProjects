@@ -27,7 +27,7 @@ public enum OPTIONS {
         return shortcut + " - " + description;
     }
 
-    OPTIONS convertToOption (int option){
+    public static OPTIONS convertToOption(int option){
         if(option < 0 || option >=OPTIONS.values().length){
             throw new NoSuchElementException();
         }
