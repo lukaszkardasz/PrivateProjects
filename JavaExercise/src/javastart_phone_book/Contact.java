@@ -27,6 +27,10 @@ public class Contact implements Comparable<Contact>{
         this.phoneNumber = phoneNumber;
     }
 
+    public String toCsv(){
+        return contactName + ";" + phoneNumber;
+    }
+
     @Override
     public String toString() {
         return contactName + " : " + phoneNumber;

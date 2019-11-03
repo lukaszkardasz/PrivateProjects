@@ -1,11 +1,8 @@
 package javastart_phone_book;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.Map;
+import java.util.*;
 
-public class PhoneBook {
+public class PhoneBook implements Iterable<Contact>{
     private Map<String, Contact> contacts = new TreeMap<>();
 
     public PhoneBook() {
@@ -53,6 +50,10 @@ public class PhoneBook {
         return result;
     }
 
+    @Override
+    public Iterator<Contact> iterator() {
+        return contacts.values().iterator();
+    }
 }
 
 
