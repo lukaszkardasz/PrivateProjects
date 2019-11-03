@@ -45,24 +45,46 @@ public class PhoneBookController {
     }
 
     private void delete() {
-        //TODO add delete method;
+        System.out.println("Podaj nazwę rekordu do usunięcia: ");
+        String nameToDelete = sc.nextLine();
+        boolean remove = phoneBook.remove(nameToDelete);
+        if (remove){
+            System.out.println("Rekord usunięty pozytywnie!");
+        } else{
+            System.out.println("Nie ma rekordu o takiej nazwie");
+        }
+    }
+
+    private void searchByName() {
+        System.out.println("Podaj nazwę kontaktu lub jego fragment: ");
+        String nameToFind = sc.nextLine();
+
     }
 
     private void searchByTelephone() {
         //TODO add searchByTelephone method;
     }
 
-    private void searchByName() {
-        //TODO add searchByName method;
-    }
-
     private void addContact() {
-        //TODO add addContact method;
+        System.out.println("Podaj imię i nazwisko: ");
+        String name = sc.nextLine();
+        System.out.println("Podaj numer telefonu: ");
+        String phone = sc.nextLine();
+        try {
+            boolean add = phoneBook.add(name, phone);
+            if (add){
+                System.out.println("Rekord dodany!");
+            } else {
+                System.out.println("Nie można dodać rekordu. Wpis o takiej nazwie już istnieje!");
+            }
+        } catch (IllegalArgumentException e) {
+            System.err.println("Nazwa ani numer telefonu nie mogą być puste!");
+        }
     }
 
     private void close() {
         sc.close();
-        System.out.println("bye bye!");
+        System.out.println("Bye bye!");
         System.exit(0);
     }
 }
