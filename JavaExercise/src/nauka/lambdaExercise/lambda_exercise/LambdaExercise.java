@@ -2,6 +2,7 @@ package nauka.lambdaExercise.lambda_exercise;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.BiConsumer;
 
 /**
  * @author n2god on 03/11/2019
@@ -21,9 +22,9 @@ public class LambdaExercise {
     /**
      * Ta metoda zwraca nam gotowy wynik po wybraniu operatorem odpowiedniej lambdy i wykonaniu metody calculate
      *
-     * @param operator
-     * @param a
-     * @param b
+     * @param operator operator
+     * @param a first parameter
+     * @param b second parameter
      */
 
     private static void result(String operator, double a, double b){
