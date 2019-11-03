@@ -1,5 +1,6 @@
 package javastart_phone_book;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -58,11 +59,25 @@ public class PhoneBookController {
     private void searchByName() {
         System.out.println("Podaj nazwę kontaktu lub jego fragment: ");
         String nameToFind = sc.nextLine();
-
+        List<Contact> contacts = phoneBook.findByName(nameToFind);
+        if(contacts.isEmpty()){
+            System.out.println("Brak wyników!");
+        } else {
+            System.out.println("Znalezionych rekordów: " + contacts.size());
+            contacts.forEach(System.out::println);
+        }
     }
 
     private void searchByTelephone() {
-        //TODO add searchByTelephone method;
+        System.out.println("Podaj numer telefonu lub jego fragment: ");
+        String phoneToFind = sc.nextLine();
+        List<Contact> contacts = phoneBook.findByTelephone(phoneToFind);
+        if(contacts.isEmpty()){
+            System.out.println("Brak wyników!");
+        } else {
+            System.out.println("Znalezionych rekordów: " + contacts.size());
+            contacts.forEach(System.out::println);
+        }
     }
 
     private void addContact() {
