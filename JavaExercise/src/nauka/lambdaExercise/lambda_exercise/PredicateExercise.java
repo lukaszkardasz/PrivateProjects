@@ -1,5 +1,6 @@
 package nauka.lambdaExercise.lambda_exercise;
 
+import java.util.Objects;
 import java.util.function.Predicate;
 
 /**
@@ -16,6 +17,20 @@ public class PredicateExercise {
             Book(double price, String coverType){
                 this.price = price;
                 this.coverType = coverType;
+            }
+
+            @Override
+            public boolean equals(Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+                Book book = (Book) o;
+                return Double.compare(book.price, price) == 0 &&
+                        Objects.equals(coverType, book.coverType);
+            }
+
+            @Override
+            public int hashCode() {
+                return Objects.hash(price, coverType);
             }
         }
 
