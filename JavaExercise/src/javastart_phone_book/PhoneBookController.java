@@ -1,13 +1,36 @@
 package javastart_phone_book;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import static javastart_phone_book.FileUtils.FILE_NAME;
+
 public class PhoneBookController {
 
-    private PhoneBook phoneBook = new PhoneBook();
+    private PhoneBook phoneBook;
     private Scanner sc = new Scanner(System.in);
+
+    public PhoneBookController() {
+
+        File file = new File(FILE_NAME);
+        boolean fileExists = file.exists();
+        System.out.println("Plik utworzony: " + file.getAbsolutePath());
+        if (!fileExists) {
+            try {
+                fileExists = file.createNewFile();
+            } catch (IOException e) {
+                System.out.println("Nie udało się utworzyć pliku");
+            }
+        }
+
+        if (fileExists)
+            System.out.println("Plik " + file + " już istnieje.");
+
+        phoneBook = FileUtils.read();
+    }
 
     public void loop(){
         OPTIONS option = null;
@@ -98,8 +121,14 @@ public class PhoneBookController {
     }
 
     private void close() {
-        sc.close();
+        try {
+            FileUtils.save(phoneBook);
+            System.out.println("Zapisano zmiany.");
+        } catch (IOException e) {
+            System.err.println("Nie udało się zapisać zmian!");
+        }
         System.out.println("Bye bye!");
+        //sc.close();
         System.exit(0);
     }
 }
