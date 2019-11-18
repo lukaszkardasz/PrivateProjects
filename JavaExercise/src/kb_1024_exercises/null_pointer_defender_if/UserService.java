@@ -1,6 +1,6 @@
-package kb_1024_exercises.null_pointer_defender;
+package kb_1024_exercises.null_pointer_defender_if;
 
-import kb_1024_exercises.null_pointer_defender.my_exceptions.UserNotFoundException;
+import kb_1024_exercises.null_pointer_defender_if.my_exceptions.UserNotFoundException;
 
 import java.util.List;
 
@@ -23,6 +23,15 @@ public class UserService {
             }
         }
         throw new UserNotFoundException("Users with login: " + login + "not found.");
+    }
+
+    public User getUserByLoginReturnsDefaultObject (String login) {
+        for(User user : users) {
+            if (user.getLogin().equals(login)) {
+                return user;
+            }
+        }
+        return User.DEFAULT_USER;
     }
 
 

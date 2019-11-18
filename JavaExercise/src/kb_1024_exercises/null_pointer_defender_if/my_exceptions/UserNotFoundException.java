@@ -1,4 +1,4 @@
-package kb_1024_exercises.null_pointer_defender.my_exceptions;
+package kb_1024_exercises.null_pointer_defender_if.my_exceptions;
 
 /**
  * @author n2god on 17/11/2019

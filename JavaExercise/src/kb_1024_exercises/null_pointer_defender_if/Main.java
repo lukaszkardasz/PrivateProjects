@@ -1,6 +1,6 @@
-package kb_1024_exercises.null_pointer_defender;
+package kb_1024_exercises.null_pointer_defender_if;
 
-import kb_1024_exercises.null_pointer_defender.my_exceptions.UserNotFoundException;
+import kb_1024_exercises.null_pointer_defender_if.my_exceptions.UserNotFoundException;
 
 import java.util.Arrays;
 
