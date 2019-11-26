@@ -44,7 +44,11 @@ public class UserService {
         return Optional.empty();
     }
 
-
+    public Optional<User> getUserByLoginReturnsOptionalUsingStreams(String login) {
+        return users.stream()
+                .filter(user -> user.getLogin().equals(login))
+                .findFirst();
+    }
 
 
 }
