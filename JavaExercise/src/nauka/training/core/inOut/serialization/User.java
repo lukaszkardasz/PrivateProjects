@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 //klasa user podlega serializacji
-public class User implements Serializable
+class User implements Serializable
 {
     private String login;
     private transient String password; //parametr transient pomija pole hasła przy serializacji

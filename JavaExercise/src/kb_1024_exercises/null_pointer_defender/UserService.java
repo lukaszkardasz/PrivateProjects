@@ -1,8 +1,9 @@
-package kb_1024_exercises.null_pointer_defender_if;
+package kb_1024_exercises.null_pointer_defender;
 
-import kb_1024_exercises.null_pointer_defender_if.my_exceptions.UserNotFoundException;
+import kb_1024_exercises.null_pointer_defender.my_exceptions.UserNotFoundException;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author n2god on 17/11/2019
@@ -22,7 +23,7 @@ public class UserService {
                 return user;
             }
         }
-        throw new UserNotFoundException("Users with login: " + login + "not found.");
+        throw new UserNotFoundException("Users with login: " + login + " not found.");
     }
 
     public User getUserByLoginReturnsDefaultObject (String login) {
@@ -32,6 +33,15 @@ public class UserService {
             }
         }
         return User.DEFAULT_USER;
+    }
+
+    public Optional<User> getUserByLoginReturnsOptional(String login) {
+        for (User user : users) {
+            if (user.getLogin().equals(login)){
+                return Optional.of(user);   //zwraca obiekt
+            }
+        }
+        return Optional.empty();
     }
 
 
